@@ -1,13 +1,14 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+        // 设前一个指针为null, cur指针为head
         ListNode* prev = nullptr;
-        ListNode* curr = head;
-        while (curr) {
+        ListNode* cur = head;
+        while (cur) {
             ListNode* next = curr->next;
-            curr->next = prev;
+            cur->next = prev;
             prev = curr;
-            curr = next;
+            cur = next;
         }
         return prev;
     }
